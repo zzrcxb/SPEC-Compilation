@@ -13,6 +13,7 @@ export HOME=$SPEC
 
 echo "Home is $HOME, SPEC is $SPEC"
 # ln -s $SPEC $HOME/SPEC2006
+echo "cd $HOME && source shrc" >> $HOME/.bashrc
 
 exec /usr/sbin/gosu user "$@"
 

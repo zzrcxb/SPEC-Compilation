@@ -1,3 +1,5 @@
+FROM debian:9.9
+MAINTAINER Neil Zhao, neil@zzrcxb.me
 
 RUN apt update && \
     apt install -y --no-install-recommends \
