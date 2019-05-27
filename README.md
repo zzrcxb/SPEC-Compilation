@@ -1,4 +1,4 @@
-# How to use Docker?
+# How to use my image?
 Run `source shrc` under SPEC2006 root directory first! (make sure `$SPEC` points to your SPEC2006 root directory)
 Then execute
 ```
