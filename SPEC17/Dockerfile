@@ -1,6 +1,6 @@
-FROM debian:9.9
+FROM debian:buster
 LABEL maintainer="neil@zzrcxb.me"
-LABEL description="a unified environment for compiling SPEC2006"
+LABEL description="a unified environment for compiling SPEC2017"
 
 RUN apt update && \
     apt install -y --no-install-recommends \
@@ -15,13 +15,13 @@ RUN apt update && \
     curl \
     gosu \
     vim \
-    less
+    less \
+    libomp-dev
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY configs/SPEC06 /usr/local/compiler-config
+COPY configs/SPEC17 /usr/local/compiler-config
 
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD /bin/bash
-

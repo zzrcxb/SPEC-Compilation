@@ -12,8 +12,8 @@ useradd --shell /bin/bash -u $USER_ID -d $SPEC -o -c "" -m user
 export HOME=$SPEC
 
 echo "Home is $HOME, SPEC is $SPEC"
-# ln -s $SPEC $HOME/SPEC2006
-echo "cd $HOME && source shrc" >> $HOME/.bashrc
 
+# copy standard configurations
+/usr/sbin/gosu user bash -c 'echo "cd $HOME && source shrc" > $HOME/.bashrc'
+/usr/sbin/gosu user bash -c 'cp /usr/local/compiler-config/*.cfg $HOME/config'
 exec /usr/sbin/gosu user "$@"
-
