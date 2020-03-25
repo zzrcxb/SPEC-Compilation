@@ -8,6 +8,8 @@ USER_ID=${LOCAL_USER_ID:-9001}
 
 echo "Starting with UID : $USER_ID"
 useradd --shell /bin/bash -u $USER_ID -d $SPEC -o -c "" -m user
+cp /etc/sudoers /etc/sudoers.bak
+echo 'user  ALL=(root) NOPASSWD: ALL' >> /etc/sudoers
 
 export HOME=$SPEC
 
