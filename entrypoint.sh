@@ -16,6 +16,7 @@ export HOME=$SPEC
 echo "Home is $HOME, SPEC is $SPEC"
 
 # copy standard configurations
-/usr/sbin/gosu user bash -c 'echo "cd $HOME && source shrc" > $HOME/.bashrc'
-/usr/sbin/gosu user bash -c 'cp /usr/local/compiler-config/*.cfg $HOME/config'
-exec /usr/sbin/gosu user "$@"
+# echo "cd $HOME && source shrc" > $HOME/.bashrc
+# echo "source /srv/ispec/bin/activate" >> $HOME/.bashrc
+# cp /usr/local/compiler-config/*.cfg $HOME/config
+su user
