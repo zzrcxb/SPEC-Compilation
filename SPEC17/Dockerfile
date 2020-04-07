@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:9.9
 LABEL maintainer="neil@zzrcxb.me"
 LABEL description="a unified environment for compiling SPEC2017"
 
@@ -15,6 +15,7 @@ RUN apt update && \
     curl \
     gosu \
     vim \
+    sudo \
     less \
     libomp-dev
 
